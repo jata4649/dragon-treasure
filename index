@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="description"
+    content="3～6人用パス＆プレイボードゲーム『ドラゴンのお宝分配会議』"
+  >
+  <title>ドラゴンのお宝分配会議</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="background-glow background-glow--one"></div>
+  <div class="background-glow background-glow--two"></div>
+
+  <header class="game-header">
+    <div class="title-group">
+      <div class="logo-icon" aria-hidden="true">🐉</div>
+
+      <div>
+        <p class="eyebrow">PASS &amp; PLAY BOARD GAME</p>
+        <h1>ドラゴンのお宝分配会議</h1>
+      </div>
+    </div>
+
+    <button
+      id="rulesButton"
+      class="icon-button"
+      type="button"
+      aria-label="ルールを表示"
+    >
+      📖 ルール
+    </button>
+  </header>
+
+  <main id="app" class="app-container">
+    <!-- JavaScriptで描画 -->
+  </main>
+
+  <dialog id="rulesDialog" class="rules-dialog">
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">HOW TO PLAY</p>
+        <h2>ゲームルール</h2>
+      </div>
+
+      <button
+        id="closeRulesButton"
+        class="close-button"
+        type="button"
+        aria-label="ルールを閉じる"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="rules-content">
+      <section>
+        <h3>目的</h3>
+        <p>
+          全6ラウンドでお宝を集め、最終的に最も高い得点を獲得した人が勝者です。
+          ただし欲張りすぎると、ドラゴンが目を覚ましてしまいます。
+        </p>
+      </section>
+
+      <section>
+        <h3>行動</h3>
+
+        <div class="rule-action-grid">
+          <article class="rule-action">
+            <span>🤝</span>
+            <div>
+              <strong>分配</strong>
+              <p>怒り＋1。お宝を1枚獲得します。</p>
+            </div>
+          </article>
+
+          <article class="rule-action">
+            <span>🗡️</span>
+            <div>
+              <strong>強奪</strong>
+              <p>怒り＋2。お宝を2枚獲得します。</p>
+            </div>
+          </article>
+
+          <article class="rule-action">
+            <span>🛡️</span>
+            <div>
+              <strong>警戒</strong>
+              <p>怒り－2。お宝は得られません。</p>
+            </div>
+          </article>
+
+          <article class="rule-action">
+            <span>👁️</span>
+            <div>
+              <strong>密告</strong>
+              <p>
+                怒りは変化しません。秘密裏に指定した相手が強奪なら、
+                その相手からランダムにお宝を1枚奪います。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h3>ドラゴンの怒り</h3>
+        <p>
+          行動公開後、怒りが「プレイヤー人数＋2」以上になるとドラゴンが目覚めます。
+          そのラウンドに並べられたお宝はすべて失われ、怒りは0に戻ります。
+        </p>
+      </section>
+
+      <section>
+        <h3>得点</h3>
+        <ul class="score-rule-list">
+          <li>🪙 金貨：1枚につき1点</li>
+          <li>💎 宝石：同色3枚で8点。余りは1枚1点</li>
+          <li>⚔️ 武器：1／3／6／10／15点</li>
+          <li>📕 魔法書：異なる種類を集めるほど高得点</li>
+          <li>
+            👑 呪われた王冠：1枚5点。ただし最多所持者全員は－10点
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>スタートプレイヤー</h3>
+        <p>
+          警戒した人がいれば、現在のスタートプレイヤーから時計回りで
+          最も近い警戒者が次のスタートプレイヤーになります。
+          誰も警戒しなかった場合は時計回りに交代します。
+        </p>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
